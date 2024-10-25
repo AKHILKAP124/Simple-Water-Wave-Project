@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+    width: 100wv;
+    background-color: #212121;
+}
+
+.box{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.water {
+    width: 900px;
+    height: 900px;
+    background: #2a8bff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.water::after,
+.water::before{
+    content: '';
+    width: 200%;
+    height: 200%;
+    background: #ffffff;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+}
+
+.water::after{
+    border-radius: 43%;
+    animation: waves 5s linear infinite;
+}
+.water::before{
+    border-radius: 35%;
+    background-color: rgba(255, 255, 255, .3);
+    animation: waves 5s linear infinite;
+}
+
+@keyframes waves{
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+        top: -30%;
+    }
+    50%{
+        top: -50%;
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+        top: -30%;
+    }
+}
+
